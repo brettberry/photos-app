@@ -8,11 +8,11 @@
 
 import UIKit
 
+
 class Dispatcher {
     
-    class func sendImage(image: UIImage){
-        
-        let url = NSURL(string: "http://172.16.5.39:4000/api/media")
+    class func sendImage(image: UIImage) {
+        let url = NSURL(string: "http://localhost:4000/api/posts")
         let request = NSMutableURLRequest(URL: url!)
         let boundary = generateBoundaryString()
         
@@ -23,7 +23,6 @@ class Dispatcher {
         let data = UIImagePNGRepresentation(image)
         let body = NSMutableData()
         
-        
         body.appendData("--\(boundary)\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
         body.appendData("Content-Disposition: form-data; name=\"file\";\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
         body.appendData("Content-Type: application/octet-stream\r\n\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
@@ -31,23 +30,8 @@ class Dispatcher {
         body.appendData("\r\n--\(boundary)--\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
         
         request.HTTPBody = body
+        return sendRequest(request)
         
-        let session = NSURLSession.sharedSession()
-        let dataTask = session.dataTaskWithRequest(request, completionHandler: {
-            (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
-            
-                if error !== nil {
-                    print(error)
-                    return
-                }
-                
-                let str = NSString(data: data!, encoding: NSUTF8StringEncoding)
-                print(str)
-                
-            }
-        )
-        
-        dataTask.resume()
     }
     
     class func generateBoundaryString() -> String {

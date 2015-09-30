@@ -26,7 +26,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func sendImageButtonClicked(sender: AnyObject) {
-        Dispatcher.sendImage(imageView.image!)
+        Request("http://localhost:3000/api/media", method: .POST, image: imageView.image!)
+            .send({ response in
+                if response.error != nil {
+                    print(response.error)
+                }
+                else {
+                    let str = NSString(data: response.data!, encoding: NSUTF8StringEncoding)
+                    print(str)
+                }
+            })
     }
     
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!) {
