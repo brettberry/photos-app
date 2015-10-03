@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,35 +17,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A93-b3-9Jj">
-                                <rect key="frame" x="175" y="236" width="240" height="128"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvJ-aI-jr5">
-                                <rect key="frame" x="259" y="420" width="82" height="30"/>
-                                <state key="normal" title="Send Image"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g38-Jd-Mrf">
+                                <rect key="frame" x="20" y="323" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
-                                    <action selector="sendImageButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qLz-4d-Phs"/>
+                                    <action selector="handleSetPasswordField:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="gch-cm-Mai"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32Y-NF-Van">
-                                <rect key="frame" x="252" y="382" width="89" height="30"/>
-                                <state key="normal" title="Select Image"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BFP-JI-pPJ">
+                                <rect key="frame" x="20" y="285" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="selectImageButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W0Y-tS-SEo"/>
+                                    <action selector="handleSetUsernameField:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="CSv-Vb-tft"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9V-PJ-LpY">
+                                <rect key="frame" x="281" y="378" width="38" height="30"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="handleLoginButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s2B-ga-oZ3"/>
+                                    <segue destination="Pth-5r-szs" kind="show" identifier="feedViewSeque" id="IW2-2C-was"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BFP-JI-pPJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ccz-hR-3wm"/>
+                            <constraint firstItem="g38-Jd-Mrf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GZi-CU-wg6"/>
+                            <constraint firstItem="Y9V-PJ-LpY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HsY-9H-tYM"/>
+                            <constraint firstItem="BFP-JI-pPJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="M7D-42-Mc6"/>
+                            <constraint firstItem="g38-Jd-Mrf" firstAttribute="top" secondItem="BFP-JI-pPJ" secondAttribute="bottom" constant="8" id="cR4-4d-Crv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BFP-JI-pPJ" secondAttribute="trailing" id="gFY-J4-DjY"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="g38-Jd-Mrf" secondAttribute="leading" id="gi5-E4-1jR"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="BFP-JI-pPJ" secondAttribute="leading" id="oeN-1V-5Re"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="g38-Jd-Mrf" secondAttribute="trailing" id="srp-a1-7A4"/>
+                            <constraint firstItem="Y9V-PJ-LpY" firstAttribute="top" secondItem="g38-Jd-Mrf" secondAttribute="bottom" constant="25" id="zoi-ec-ozh"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="A93-b3-9Jj" id="9I0-68-kwj"/>
-                        <outlet property="selectImageButton" destination="32Y-NF-Van" id="g47-V1-n5r"/>
-                        <outlet property="sendImageButton" destination="fvJ-aI-jr5" id="WgB-n0-C5r"/>
+                        <outlet property="loginButton" destination="Y9V-PJ-LpY" id="ThD-wO-BtP"/>
+                        <outlet property="passwordTextField" destination="g38-Jd-Mrf" id="Pwg-fd-mQj"/>
+                        <outlet property="usernameTextField" destination="BFP-JI-pPJ" id="hKt-rJ-Gvs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="87" y="-2"/>
+            <point key="canvasLocation" x="121" y="105"/>
+        </scene>
+        <!--Feed View Controller-->
+        <scene sceneID="YB7-LC-h2d">
+            <objects>
+                <viewController storyboardIdentifier="feedViewController" id="Pth-5r-szs" customClass="FeedViewController" customModule="photos" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BpO-Co-beu"/>
+                        <viewControllerLayoutGuide type="bottom" id="2xc-qR-1fK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kCU-YG-XDo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bxj-8j-69h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="761" y="-2"/>
         </scene>
     </scenes>
 </document>

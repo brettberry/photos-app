@@ -8,39 +8,43 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var selectImageButton: UIButton!
-    @IBOutlet weak var sendImageButton: UIButton!
-    var imagePicker = UIImagePickerController()
+class ViewController: UIViewController {
     
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     
-    @IBAction func selectImageButtonClicked(sender: AnyObject) {
-        if UIImagePickerController.isSourceTypeAvailable(.SavedPhotosAlbum) {
-            imagePicker.delegate = self
-            imagePicker.sourceType = .SavedPhotosAlbum
-            imagePicker.allowsEditing = false
-            self.presentViewController(imagePicker, animated: true, completion: nil)
+    var user = UserLoginModel(username: nil, password: nil)
+ 
+    @IBAction func handleLoginButtonClick(sender: AnyObject) {
+        if let username = usernameTextField.text, password = passwordTextField.text {
+            do {
+                user = UserLoginModel(username: username, password: password)
+                try UserViewActions.loginUser(user) { user in
+                    
+                    // set the current user
+                    CurrentUserStore.sharedCurrentUserStore.setCurrentUser(user)
+                    
+                    // transition to the logged in view
+                    self.performSegueWithIdentifier("feedViewSeque", sender: self)
+                }
+            }
+            catch let error as NSError {
+                print(error)
+            }
         }
     }
     
-    @IBAction func sendImageButtonClicked(sender: AnyObject) {
-        Request("http://localhost:3000/api/media", method: .POST, image: imageView.image!)
-            .send({ response in
-                if response.error != nil {
-                    print(response.error)
-                }
-                else {
-                    let str = NSString(data: response.data!, encoding: NSUTF8StringEncoding)
-                    print(str)
-                }
-            })
+    @IBAction func handleSetUsernameField(sender: AnyObject) {
+        if let username = usernameTextField.text {
+            user = user.setUsername(username)
+        }
     }
     
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-        imageView.image = image
+    @IBAction func handleSetPasswordField(sender: AnyObject) {
+        if let password = passwordTextField.text {
+            user = user.setPassword(password)
+        }
     }
 }
 

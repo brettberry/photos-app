@@ -7,7 +7,9 @@
 //
 
 import Foundation
- import UIKit
+import UIKit
+
+
 
 struct Response {
     let data: NSData?
@@ -31,6 +33,15 @@ class Request {
     }
 
     init(_ request: NSURLRequest) {
+        self.request = request
+    }
+    
+    init(_ url: String, method: HttpMethod, data: NSData) {
+        let request = NSMutableURLRequest(URL: NSURL(string: url)!)
+        request.HTTPMethod = method.rawValue
+        request.HTTPBody = data
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
         self.request = request
     }
 
