@@ -14,7 +14,8 @@
 		1220E7541BB89E8A00A19D32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1220E7521BB89E8A00A19D32 /* LaunchScreen.storyboard */; };
 		1220E75F1BB89E8A00A19D32 /* photosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1220E75E1BB89E8A00A19D32 /* photosTests.swift */; };
 		1220E76A1BB89E8A00A19D32 /* photosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1220E7691BB89E8A00A19D32 /* photosUITests.swift */; };
-		1220E7781BB8A2FA00A19D32 /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1220E7771BB8A2FA00A19D32 /* Dispatcher.swift */; settings = {ASSET_TAGS = (); }; };
+		FCCEB7EE1BBBA27C000FF5F2 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCEB7ED1BBBA27C000FF5F2 /* Request.swift */; settings = {ASSET_TAGS = (); }; };
+		FCCEB7F01BBBA305000FF5F2 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCEB7ED1BBBA27C000FF5F2 /* Request.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +49,7 @@
 		1220E7651BB89E8A00A19D32 /* photosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = photosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1220E7691BB89E8A00A19D32 /* photosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photosUITests.swift; sourceTree = "<group>"; };
 		1220E76B1BB89E8A00A19D32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1220E7771BB8A2FA00A19D32 /* Dispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatcher.swift; sourceTree = "<group>"; };
+		FCCEB7ED1BBBA27C000FF5F2 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				1220E7491BB89E8A00A19D32 /* AppDelegate.swift */,
+				FCCEB7ED1BBBA27C000FF5F2 /* Request.swift */,
 				1220E74B1BB89E8A00A19D32 /* ViewController.swift */,
-				1220E7771BB8A2FA00A19D32 /* Dispatcher.swift */,
 				1220E74D1BB89E8A00A19D32 /* Main.storyboard */,
 				1220E7501BB89E8A00A19D32 /* Assets.xcassets */,
 				1220E7521BB89E8A00A19D32 /* LaunchScreen.storyboard */,
@@ -260,7 +261,7 @@
 			files = (
 				1220E74C1BB89E8A00A19D32 /* ViewController.swift in Sources */,
 				1220E74A1BB89E8A00A19D32 /* AppDelegate.swift in Sources */,
-				1220E7781BB8A2FA00A19D32 /* Dispatcher.swift in Sources */,
+				FCCEB7EE1BBBA27C000FF5F2 /* Request.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1220E75F1BB89E8A00A19D32 /* photosTests.swift in Sources */,
+				FCCEB7F01BBBA305000FF5F2 /* Request.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +487,7 @@
 				1220E7701BB89E8A00A19D32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1220E7711BB89E8A00A19D32 /* Build configuration list for PBXNativeTarget "photosTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +496,7 @@
 				1220E7731BB89E8A00A19D32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1220E7741BB89E8A00A19D32 /* Build configuration list for PBXNativeTarget "photosUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +505,7 @@
 				1220E7761BB89E8A00A19D32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
