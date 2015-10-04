@@ -16,6 +16,14 @@
 		1220E76A1BB89E8A00A19D32 /* photosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1220E7691BB89E8A00A19D32 /* photosUITests.swift */; };
 		FCCEB7EE1BBBA27C000FF5F2 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCEB7ED1BBBA27C000FF5F2 /* Request.swift */; settings = {ASSET_TAGS = (); }; };
 		FCCEB7F01BBBA305000FF5F2 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCEB7ED1BBBA27C000FF5F2 /* Request.swift */; settings = {ASSET_TAGS = (); }; };
+		FCCEB7F31BBFB366000FF5F2 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCEB7F21BBFB366000FF5F2 /* UserModel.swift */; settings = {ASSET_TAGS = (); }; };
+		FCCEB7F51BBFB58A000FF5F2 /* UserViewActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCEB7F41BBFB58A000FF5F2 /* UserViewActions.swift */; settings = {ASSET_TAGS = (); }; };
+		FCCEB7F81BBFC0B0000FF5F2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCEB7F71BBFC0B0000FF5F2 /* Model.swift */; settings = {ASSET_TAGS = (); }; };
+		FCCEB7FA1BBFCDC6000FF5F2 /* UserLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCEB7F91BBFCDC6000FF5F2 /* UserLoginModel.swift */; settings = {ASSET_TAGS = (); }; };
+		FCCEB7FD1BC04F7D000FF5F2 /* CurrentUserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCEB7FC1BC04F7D000FF5F2 /* CurrentUserStore.swift */; settings = {ASSET_TAGS = (); }; };
+		FCCEB7FF1BC05917000FF5F2 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCEB7FE1BC05917000FF5F2 /* Store.swift */; settings = {ASSET_TAGS = (); }; };
+		FCE3EBEB1BC05B5800B932A8 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3EBEA1BC05B5800B932A8 /* Observable.swift */; settings = {ASSET_TAGS = (); }; };
+		FCE3EBED1BC0617000B932A8 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3EBEC1BC0617000B932A8 /* FeedViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +58,14 @@
 		1220E7691BB89E8A00A19D32 /* photosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photosUITests.swift; sourceTree = "<group>"; };
 		1220E76B1BB89E8A00A19D32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCCEB7ED1BBBA27C000FF5F2 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		FCCEB7F21BBFB366000FF5F2 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		FCCEB7F41BBFB58A000FF5F2 /* UserViewActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewActions.swift; sourceTree = "<group>"; };
+		FCCEB7F71BBFC0B0000FF5F2 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		FCCEB7F91BBFCDC6000FF5F2 /* UserLoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginModel.swift; sourceTree = "<group>"; };
+		FCCEB7FC1BC04F7D000FF5F2 /* CurrentUserStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUserStore.swift; sourceTree = "<group>"; };
+		FCCEB7FE1BC05917000FF5F2 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		FCE3EBEA1BC05B5800B932A8 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		FCE3EBEC1BC0617000B932A8 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +116,9 @@
 		1220E7481BB89E8A00A19D32 /* photos */ = {
 			isa = PBXGroup;
 			children = (
+				FCCEB7FB1BC04F6C000FF5F2 /* stores */,
+				FCCEB7F61BBFB59E000FF5F2 /* actions */,
+				FCCEB7F11BBFAF2B000FF5F2 /* models */,
 				1220E7491BB89E8A00A19D32 /* AppDelegate.swift */,
 				FCCEB7ED1BBBA27C000FF5F2 /* Request.swift */,
 				1220E74B1BB89E8A00A19D32 /* ViewController.swift */,
@@ -107,6 +126,7 @@
 				1220E7501BB89E8A00A19D32 /* Assets.xcassets */,
 				1220E7521BB89E8A00A19D32 /* LaunchScreen.storyboard */,
 				1220E7551BB89E8A00A19D32 /* Info.plist */,
+				FCE3EBEC1BC0617000B932A8 /* FeedViewController.swift */,
 			);
 			path = photos;
 			sourceTree = "<group>";
@@ -127,6 +147,42 @@
 				1220E76B1BB89E8A00A19D32 /* Info.plist */,
 			);
 			path = photosUITests;
+			sourceTree = "<group>";
+		};
+		FCCEB7F11BBFAF2B000FF5F2 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				FCCEB7F21BBFB366000FF5F2 /* UserModel.swift */,
+				FCCEB7F71BBFC0B0000FF5F2 /* Model.swift */,
+				FCCEB7F91BBFCDC6000FF5F2 /* UserLoginModel.swift */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		FCCEB7F61BBFB59E000FF5F2 /* actions */ = {
+			isa = PBXGroup;
+			children = (
+				FCCEB7F41BBFB58A000FF5F2 /* UserViewActions.swift */,
+			);
+			name = actions;
+			sourceTree = "<group>";
+		};
+		FCCEB7FB1BC04F6C000FF5F2 /* stores */ = {
+			isa = PBXGroup;
+			children = (
+				FCE3EBE91BC05B4000B932A8 /* helpers */,
+				FCCEB7FC1BC04F7D000FF5F2 /* CurrentUserStore.swift */,
+				FCCEB7FE1BC05917000FF5F2 /* Store.swift */,
+			);
+			name = stores;
+			sourceTree = "<group>";
+		};
+		FCE3EBE91BC05B4000B932A8 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FCE3EBEA1BC05B5800B932A8 /* Observable.swift */,
+			);
+			name = helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +315,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCCEB7FD1BC04F7D000FF5F2 /* CurrentUserStore.swift in Sources */,
 				1220E74C1BB89E8A00A19D32 /* ViewController.swift in Sources */,
+				FCCEB7FA1BBFCDC6000FF5F2 /* UserLoginModel.swift in Sources */,
+				FCCEB7FF1BC05917000FF5F2 /* Store.swift in Sources */,
 				1220E74A1BB89E8A00A19D32 /* AppDelegate.swift in Sources */,
+				FCCEB7F31BBFB366000FF5F2 /* UserModel.swift in Sources */,
+				FCE3EBEB1BC05B5800B932A8 /* Observable.swift in Sources */,
+				FCE3EBED1BC0617000B932A8 /* FeedViewController.swift in Sources */,
+				FCCEB7F81BBFC0B0000FF5F2 /* Model.swift in Sources */,
+				FCCEB7F51BBFB58A000FF5F2 /* UserViewActions.swift in Sources */,
 				FCCEB7EE1BBBA27C000FF5F2 /* Request.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
